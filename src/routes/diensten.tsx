@@ -48,7 +48,7 @@ function Diensten() {
         eyebrow="Diensten"
         title="Waar ik bij kan helpen"
         intro="Soms weet je even niet meer hoe verder. In mijn praktijk begeleid ik kinderen en volwassenen naar meer rust, balans en verbinding met zichzelf — zodat de levensenergie weer kan stromen."
-        image={img.volwassenen}
+        image={img.heroDiensten}
         imageAlt="Rustige plek in de praktijk van Lindy"
         actions={
           <>

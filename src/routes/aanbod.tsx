@@ -87,7 +87,7 @@ function Aanbod() {
         eyebrow="Aanbod"
         title="Iedere verandering begint met één stap"
         intro="Soms heb je genoeg aan één sessie om weer verder te kunnen. Soms vraagt jouw proces om meer tijd en verdieping. En soms is het jouw kind dat laat zien dat er iets gezien mag worden."
-        image={img.lindyWerk}
+        image={img.heroAanbod}
         imageAlt="Lindy in gesprek in haar praktijk"
         actions={
           <>
