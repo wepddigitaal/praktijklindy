@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AanbodRouteImport } from './routes/aanbod'
+import { Route as AlgemeneVoorwaardenRouteImport } from './routes/algemene-voorwaarden'
+import { Route as AlleenGeborenTweelingRouteImport } from './routes/alleen-geboren-tweeling'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CookiebeleidRouteImport } from './routes/cookiebeleid'
+import { Route as DienstenRouteImport } from './routes/diensten'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AanbodRoute = AanbodRouteImport.update({
+  id: '/aanbod',
+  path: '/aanbod',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlgemeneVoorwaardenRoute = AlgemeneVoorwaardenRouteImport.update({
+  id: '/algemene-voorwaarden',
+  path: '/algemene-voorwaarden',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlleenGeborenTweelingRoute = AlleenGeborenTweelingRouteImport.update({
+  id: '/alleen-geboren-tweeling',
+  path: '/alleen-geboren-tweeling',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiebeleidRoute = CookiebeleidRouteImport.update({
+  id: '/cookiebeleid',
+  path: '/cookiebeleid',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DienstenRoute = DienstenRouteImport.update({
+  id: '/diensten',
+  path: '/diensten',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aanbod': typeof AanbodRoute
+  '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
+  '/alleen-geboren-tweeling': typeof AlleenGeborenTweelingRoute
+  '/contact': typeof ContactRoute
+  '/cookiebeleid': typeof CookiebeleidRoute
+  '/diensten': typeof DienstenRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aanbod': typeof AanbodRoute
+  '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
+  '/alleen-geboren-tweeling': typeof AlleenGeborenTweelingRoute
+  '/contact': typeof ContactRoute
+  '/cookiebeleid': typeof CookiebeleidRoute
+  '/diensten': typeof DienstenRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aanbod': typeof AanbodRoute
+  '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
+  '/alleen-geboren-tweeling': typeof AlleenGeborenTweelingRoute
+  '/contact': typeof ContactRoute
+  '/cookiebeleid': typeof CookiebeleidRoute
+  '/diensten': typeof DienstenRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/aanbod'
+    | '/algemene-voorwaarden'
+    | '/alleen-geboren-tweeling'
+    | '/contact'
+    | '/cookiebeleid'
+    | '/diensten'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/aanbod'
+    | '/algemene-voorwaarden'
+    | '/alleen-geboren-tweeling'
+    | '/contact'
+    | '/cookiebeleid'
+    | '/diensten'
+  id:
+    | '__root__'
+    | '/'
+    | '/aanbod'
+    | '/algemene-voorwaarden'
+    | '/alleen-geboren-tweeling'
+    | '/contact'
+    | '/cookiebeleid'
+    | '/diensten'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AanbodRoute: typeof AanbodRoute
+  AlgemeneVoorwaardenRoute: typeof AlgemeneVoorwaardenRoute
+  AlleenGeborenTweelingRoute: typeof AlleenGeborenTweelingRoute
+  ContactRoute: typeof ContactRoute
+  CookiebeleidRoute: typeof CookiebeleidRoute
+  DienstenRoute: typeof DienstenRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aanbod': {
+      id: '/aanbod'
+      path: '/aanbod'
+      fullPath: '/aanbod'
+      preLoaderRoute: typeof AanbodRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/algemene-voorwaarden': {
+      id: '/algemene-voorwaarden'
+      path: '/algemene-voorwaarden'
+      fullPath: '/algemene-voorwaarden'
+      preLoaderRoute: typeof AlgemeneVoorwaardenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/alleen-geboren-tweeling': {
+      id: '/alleen-geboren-tweeling'
+      path: '/alleen-geboren-tweeling'
+      fullPath: '/alleen-geboren-tweeling'
+      preLoaderRoute: typeof AlleenGeborenTweelingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookiebeleid': {
+      id: '/cookiebeleid'
+      path: '/cookiebeleid'
+      fullPath: '/cookiebeleid'
+      preLoaderRoute: typeof CookiebeleidRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diensten': {
+      id: '/diensten'
+      path: '/diensten'
+      fullPath: '/diensten'
+      preLoaderRoute: typeof DienstenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AanbodRoute: AanbodRoute,
+  AlgemeneVoorwaardenRoute: AlgemeneVoorwaardenRoute,
+  AlleenGeborenTweelingRoute: AlleenGeborenTweelingRoute,
+  ContactRoute: ContactRoute,
+  CookiebeleidRoute: CookiebeleidRoute,
+  DienstenRoute: DienstenRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
