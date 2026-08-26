@@ -32,7 +32,7 @@ function Home() {
         eyebrow="Praktijk Lindy — Voorburg"
         title="Waar jij écht gezien en gehoord wordt"
         intro="Energetische gezinstherapie voor kinderen en volwassenen. Samen kijken we voorbij het gedrag en de klacht, terug naar de kern — zodat er weer rust, ruimte en vertrouwen kan ontstaan."
-        image={img.lindyPortret}
+        image={img.heroHome}
         imageAlt="Lindy Prins, energetisch gezinstherapeut"
         actions={
           <>
