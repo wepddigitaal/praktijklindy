@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AanbodRouteImport } from './routes/aanbod'
 import { Route as AlleenGeborenTweelingRouteImport } from './routes/alleen-geboren-tweeling'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DienstenRouteImport } from './routes/diensten'
 
 const IndexRoute = IndexRouteImport.update({
@@ -29,6 +30,11 @@ const AlleenGeborenTweelingRoute = AlleenGeborenTweelingRouteImport.update({
   path: '/alleen-geboren-tweeling',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DienstenRoute = DienstenRouteImport.update({
   id: '/diensten',
   path: '/diensten',
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aanbod': typeof AanbodRoute
   '/alleen-geboren-tweeling': typeof AlleenGeborenTweelingRoute
+  '/contact': typeof ContactRoute
   '/diensten': typeof DienstenRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aanbod': typeof AanbodRoute
   '/alleen-geboren-tweeling': typeof AlleenGeborenTweelingRoute
+  '/contact': typeof ContactRoute
   '/diensten': typeof DienstenRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,29 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/aanbod': typeof AanbodRoute
   '/alleen-geboren-tweeling': typeof AlleenGeborenTweelingRoute
+  '/contact': typeof ContactRoute
   '/diensten': typeof DienstenRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/aanbod' | '/alleen-geboren-tweeling' | '/diensten'
+  fullPaths:
+    '/' | '/aanbod' | '/alleen-geboren-tweeling' | '/contact' | '/diensten'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/aanbod' | '/alleen-geboren-tweeling' | '/diensten'
-  id: '__root__' | '/' | '/aanbod' | '/alleen-geboren-tweeling' | '/diensten'
+  to: '/' | '/aanbod' | '/alleen-geboren-tweeling' | '/contact' | '/diensten'
+  id:
+    | '__root__'
+    | '/'
+    | '/aanbod'
+    | '/alleen-geboren-tweeling'
+    | '/contact'
+    | '/diensten'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AanbodRoute: typeof AanbodRoute
   AlleenGeborenTweelingRoute: typeof AlleenGeborenTweelingRoute
+  ContactRoute: typeof ContactRoute
   DienstenRoute: typeof DienstenRoute
 }
 
@@ -92,6 +109,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AlleenGeborenTweelingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/diensten': {
       id: '/diensten'
       path: '/diensten'
@@ -106,6 +130,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AanbodRoute: AanbodRoute,
   AlleenGeborenTweelingRoute: AlleenGeborenTweelingRoute,
+  ContactRoute: ContactRoute,
   DienstenRoute: DienstenRoute,
 }
 export const routeTree = rootRouteImport
