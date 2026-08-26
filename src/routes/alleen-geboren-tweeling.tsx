@@ -48,8 +48,8 @@ function AlleenGeborenTweeling() {
         eyebrow="Alleen geboren tweelingen"
         title="Voel jij je vaak alleen, anders of niet begrepen?"
         intro="Heb je het gevoel dat er iets ontbreekt in je leven, zonder dat je precies kunt aanwijzen wat? Misschien ben je al je hele leven “zoekende” naar compleetheid, verbinding of thuiskomen."
-        image={img.extra2}
-        imageAlt="Zachte sfeerfoto"
+        image={img.aanbodIllustratie}
+        imageAlt="Twee baby's samen in de baarmoeder"
         actions={
           <>
             <CtaLink to="/alleen-geboren-tweeling" hash="herkenning">
