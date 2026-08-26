@@ -14,6 +14,7 @@ import { Route as AanbodRouteImport } from './routes/aanbod'
 import { Route as AlgemeneVoorwaardenRouteImport } from './routes/algemene-voorwaarden'
 import { Route as AlleenGeborenTweelingRouteImport } from './routes/alleen-geboren-tweeling'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CookiebeleidRouteImport } from './routes/cookiebeleid'
 import { Route as DienstenRouteImport } from './routes/diensten'
 
 const IndexRoute = IndexRouteImport.update({
@@ -41,6 +42,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CookiebeleidRoute = CookiebeleidRouteImport.update({
+  id: '/cookiebeleid',
+  path: '/cookiebeleid',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DienstenRoute = DienstenRouteImport.update({
   id: '/diensten',
   path: '/diensten',
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
   '/alleen-geboren-tweeling': typeof AlleenGeborenTweelingRoute
   '/contact': typeof ContactRoute
+  '/cookiebeleid': typeof CookiebeleidRoute
   '/diensten': typeof DienstenRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
   '/alleen-geboren-tweeling': typeof AlleenGeborenTweelingRoute
   '/contact': typeof ContactRoute
+  '/cookiebeleid': typeof CookiebeleidRoute
   '/diensten': typeof DienstenRoute
 }
 export interface FileRoutesById {
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
   '/alleen-geboren-tweeling': typeof AlleenGeborenTweelingRoute
   '/contact': typeof ContactRoute
+  '/cookiebeleid': typeof CookiebeleidRoute
   '/diensten': typeof DienstenRoute
 }
 export interface FileRouteTypes {
@@ -80,6 +89,7 @@ export interface FileRouteTypes {
     | '/algemene-voorwaarden'
     | '/alleen-geboren-tweeling'
     | '/contact'
+    | '/cookiebeleid'
     | '/diensten'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -88,6 +98,7 @@ export interface FileRouteTypes {
     | '/algemene-voorwaarden'
     | '/alleen-geboren-tweeling'
     | '/contact'
+    | '/cookiebeleid'
     | '/diensten'
   id:
     | '__root__'
@@ -96,6 +107,7 @@ export interface FileRouteTypes {
     | '/algemene-voorwaarden'
     | '/alleen-geboren-tweeling'
     | '/contact'
+    | '/cookiebeleid'
     | '/diensten'
   fileRoutesById: FileRoutesById
 }
@@ -105,6 +117,7 @@ export interface RootRouteChildren {
   AlgemeneVoorwaardenRoute: typeof AlgemeneVoorwaardenRoute
   AlleenGeborenTweelingRoute: typeof AlleenGeborenTweelingRoute
   ContactRoute: typeof ContactRoute
+  CookiebeleidRoute: typeof CookiebeleidRoute
   DienstenRoute: typeof DienstenRoute
 }
 
@@ -145,6 +158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cookiebeleid': {
+      id: '/cookiebeleid'
+      path: '/cookiebeleid'
+      fullPath: '/cookiebeleid'
+      preLoaderRoute: typeof CookiebeleidRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/diensten': {
       id: '/diensten'
       path: '/diensten'
@@ -161,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   AlgemeneVoorwaardenRoute: AlgemeneVoorwaardenRoute,
   AlleenGeborenTweelingRoute: AlleenGeborenTweelingRoute,
   ContactRoute: ContactRoute,
+  CookiebeleidRoute: CookiebeleidRoute,
   DienstenRoute: DienstenRoute,
 }
 export const routeTree = rootRouteImport
