@@ -6,6 +6,7 @@ export function PageHero({
   intro,
   image,
   imageAlt,
+  imagePosition,
   actions,
 }: {
   eyebrow?: string;
@@ -13,6 +14,7 @@ export function PageHero({
   intro?: string;
   image: string;
   imageAlt: string;
+  imagePosition?: string;
   actions?: ReactNode;
 }) {
   return (
@@ -35,6 +37,7 @@ export function PageHero({
             src={image}
             alt={imageAlt}
             className="aspect-[4/5] w-full object-cover"
+            style={imagePosition ? { objectPosition: imagePosition } : undefined}
             loading="eager"
           />
         </div>
