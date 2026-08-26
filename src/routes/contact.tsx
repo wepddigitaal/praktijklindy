@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, CalendarCheck } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { CtaLink } from "@/components/site/CTA";
 import { contactInfo, img } from "@/lib/images";
+import { socialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { contactInfo } from "@/lib/images";
+import { socialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/cookiebeleid")({
   head: () => ({

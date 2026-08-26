@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { CtaLink, ClosingCta } from "@/components/site/CTA";
 import { img } from "@/lib/images";
+import { socialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/diensten")({
   head: () => ({
