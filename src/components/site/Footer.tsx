@@ -7,7 +7,9 @@ export function Footer() {
     <footer className="mt-24 border-t border-border bg-secondary/60">
       <div className="container-page grid gap-12 py-16 md:grid-cols-3">
         <div>
-          <img src={img.logo} alt="Praktijk Lindy" className="h-14 w-auto" />
+          <span className="inline-flex items-center rounded-2xl bg-moss px-5 py-3">
+            <img src={img.logo} alt="Praktijk Lindy" className="h-10 w-auto" />
+          </span>
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
             Energetische gezinstherapie in Voorburg. Voor kinderen en volwassenen die weer
             thuis willen komen bij zichzelf.
