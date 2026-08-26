@@ -7,21 +7,14 @@ import { contactInfo, img } from "@/lib/images";
 import { socialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Praktijk Lindy in Voorburg" },
-      {
-        name: "description",
-        content:
-          "Neem contact op met Praktijk Lindy in Voorburg. Mail info@praktijklindy.nl, bel of app 06 53370827, of plan direct je afspraak.",
-      },
-      { property: "og:title", content: "Contact — Praktijk Lindy" },
-      {
-        property: "og:description",
-        content: "Vragen of een afspraak maken? Neem vrijblijvend contact op met Lindy Prins.",
-      },
-    ],
-  }),
+  head: () =>
+    socialMeta({
+      path: "/contact",
+      title: "Contact — Praktijk Lindy in Voorburg",
+      description:
+        "Neem contact op met Praktijk Lindy in Voorburg. Mail info@praktijklindy.nl, bel of app 06 53370827, of plan direct je afspraak.",
+      image: img.extra3,
+    }),
   component: Contact,
 });
 

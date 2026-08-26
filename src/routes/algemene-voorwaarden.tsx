@@ -1,22 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { contactInfo } from "@/lib/images";
+import { socialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/algemene-voorwaarden")({
-  head: () => ({
-    meta: [
-      { title: "Algemene voorwaarden — Praktijk Lindy" },
-      {
-        name: "description",
-        content:
-          "De algemene voorwaarden (GAT) van Praktijk Lindy: afspraken, annulering, tarieven, privacy, aansprakelijkheid en klachtrecht.",
-      },
-      { property: "og:title", content: "Algemene voorwaarden — Praktijk Lindy" },
-      {
-        property: "og:description",
-        content: "Afspraken, annulering, tarieven en klachtrecht bij Praktijk Lindy.",
-      },
-    ],
-  }),
+  head: () =>
+    socialMeta({
+      path: "/algemene-voorwaarden",
+      title: "Algemene voorwaarden — Praktijk Lindy",
+      description:
+        "De algemene voorwaarden (GAT) van Praktijk Lindy: afspraken, annulering, tarieven, privacy, aansprakelijkheid en klachtrecht.",
+    }),
   component: Voorwaarden,
 });
 

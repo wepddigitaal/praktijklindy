@@ -5,25 +5,15 @@ import { img } from "@/lib/images";
 import { socialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/alleen-geboren-tweeling")({
-  head: () => ({
-    meta: [
-      { title: "Alleen geboren tweeling — herken jij jezelf hierin? | Praktijk Lindy" },
-      {
-        name: "description",
-        content:
-          "Voel je je vaak alleen, anders of niet begrepen? Misschien ben je een alleen geboren tweeling. Lees de kenmerken en hoe begeleiding kan helpen.",
-      },
-      {
-        property: "og:title",
-        content: "Alleen geboren tweeling — herken jij jezelf hierin?",
-      },
-      {
-        property: "og:description",
-        content:
-          "Over alleen geboren tweelingen: kenmerken, herkenning en liefdevolle begeleiding bij Praktijk Lindy.",
-      },
-    ],
-  }),
+  head: () =>
+    socialMeta({
+      path: "/alleen-geboren-tweeling",
+      title: "Alleen geboren tweeling — herken jij jezelf hierin? | Praktijk Lindy",
+      description:
+        "Voel je je vaak alleen, anders of niet begrepen? Misschien ben je een alleen geboren tweeling. Lees de kenmerken en hoe liefdevolle begeleiding kan helpen.",
+      image: img.aanbodIllustratie,
+      type: "article",
+    }),
   component: AlleenGeborenTweeling,
 });
 

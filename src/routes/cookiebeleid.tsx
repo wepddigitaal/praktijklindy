@@ -3,21 +3,13 @@ import { contactInfo } from "@/lib/images";
 import { socialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/cookiebeleid")({
-  head: () => ({
-    meta: [
-      { title: "Cookiebeleid — Praktijk Lindy" },
-      {
-        name: "description",
-        content:
-          "Welke cookies Praktijk Lindy gebruikt: functioneel, analytisch en marketing, en hoe je jouw voorkeuren aanpast.",
-      },
-      { property: "og:title", content: "Cookiebeleid — Praktijk Lindy" },
-      {
-        property: "og:description",
-        content: "Welke cookies Praktijk Lindy gebruikt en hoe je ze verwijdert.",
-      },
-    ],
-  }),
+  head: () =>
+    socialMeta({
+      path: "/cookiebeleid",
+      title: "Cookiebeleid — Praktijk Lindy",
+      description:
+        "Welke cookies Praktijk Lindy gebruikt: functioneel, analytisch en marketing, en hoe je jouw voorkeuren aanpast of cookies verwijdert.",
+    }),
   component: Cookiebeleid,
 });
 
