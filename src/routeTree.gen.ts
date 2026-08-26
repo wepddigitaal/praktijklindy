@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AanbodRouteImport } from './routes/aanbod'
+import { Route as AlleenGeborenTweelingRouteImport } from './routes/alleen-geboren-tweeling'
 import { Route as DienstenRouteImport } from './routes/diensten'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const AanbodRoute = AanbodRouteImport.update({
   path: '/aanbod',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AlleenGeborenTweelingRoute = AlleenGeborenTweelingRouteImport.update({
+  id: '/alleen-geboren-tweeling',
+  path: '/alleen-geboren-tweeling',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DienstenRoute = DienstenRouteImport.update({
   id: '/diensten',
   path: '/diensten',
@@ -32,30 +38,34 @@ const DienstenRoute = DienstenRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aanbod': typeof AanbodRoute
+  '/alleen-geboren-tweeling': typeof AlleenGeborenTweelingRoute
   '/diensten': typeof DienstenRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aanbod': typeof AanbodRoute
+  '/alleen-geboren-tweeling': typeof AlleenGeborenTweelingRoute
   '/diensten': typeof DienstenRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/aanbod': typeof AanbodRoute
+  '/alleen-geboren-tweeling': typeof AlleenGeborenTweelingRoute
   '/diensten': typeof DienstenRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/aanbod' | '/diensten'
+  fullPaths: '/' | '/aanbod' | '/alleen-geboren-tweeling' | '/diensten'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/aanbod' | '/diensten'
-  id: '__root__' | '/' | '/aanbod' | '/diensten'
+  to: '/' | '/aanbod' | '/alleen-geboren-tweeling' | '/diensten'
+  id: '__root__' | '/' | '/aanbod' | '/alleen-geboren-tweeling' | '/diensten'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AanbodRoute: typeof AanbodRoute
+  AlleenGeborenTweelingRoute: typeof AlleenGeborenTweelingRoute
   DienstenRoute: typeof DienstenRoute
 }
 
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AanbodRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/alleen-geboren-tweeling': {
+      id: '/alleen-geboren-tweeling'
+      path: '/alleen-geboren-tweeling'
+      fullPath: '/alleen-geboren-tweeling'
+      preLoaderRoute: typeof AlleenGeborenTweelingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/diensten': {
       id: '/diensten'
       path: '/diensten'
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AanbodRoute: AanbodRoute,
+  AlleenGeborenTweelingRoute: AlleenGeborenTweelingRoute,
   DienstenRoute: DienstenRoute,
 }
 export const routeTree = rootRouteImport
