@@ -18,7 +18,9 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur">
       <div className="container-page flex items-center justify-between gap-4 py-3">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img src={img.logo} alt="Praktijk Lindy logo" className="h-12 w-auto" />
+          <span className="flex items-center rounded-2xl bg-moss px-4 py-2">
+            <img src={img.logo} alt="Praktijk Lindy logo" className="h-9 w-auto" />
+          </span>
           <span className="sr-only">Praktijk Lindy</span>
         </Link>
 
