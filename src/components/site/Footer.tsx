@@ -64,16 +64,17 @@ export function Footer() {
 
       <div className="container-page border-t border-border py-10">
         <div className="surface-card flex flex-col gap-4 p-6 md:flex-row md:items-center">
-          <div className="flex items-center gap-4">
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-moss text-moss-foreground">
-              <ShieldCheck className="h-8 w-8" />
-            </div>
-            <div className="text-xs font-semibold tracking-widest text-muted-foreground">
-              <span className="block text-base font-medium tracking-normal text-foreground">
-                CAT-therapeut
-              </span>
-              GAT / Wkkgz
-            </div>
+          <div className="flex shrink-0 items-center gap-4">
+            <img
+              src={img.logoCat}
+              alt="CAT — Collectief Alternatieve Therapeuten, aangesloten 2026"
+              className="h-20 w-20 rounded-full"
+            />
+            <img
+              src={img.logoGat}
+              alt="GAT — Geschillen Alternatieve Therapeuten, aangesloten 2026"
+              className="h-20 w-20 rounded-full"
+            />
           </div>
           <p className="text-sm text-muted-foreground">
             Ik val als CAT-therapeut onder GAT-Wkkgz klachtrecht en GAT-tuchtrecht bij de
