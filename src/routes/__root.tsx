@@ -13,6 +13,8 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
+import { img, contactInfo } from "../lib/images";
+import { SITE_URL, abs } from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -86,7 +88,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Praktijk Lindy: energetische gezinstherapie, NEI-therapie en systemisch werk voor kinderen en volwassenen in Voorburg.",
       },
       { name: "author", content: "Lindy Prins" },
+      { name: "robots", content: "index, follow" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Praktijk Lindy" },
+      { property: "og:locale", content: "nl_NL" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -97,7 +102,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Karla:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "HealthAndBeautyBusiness",
+          name: "Praktijk Lindy",
+          description:
+            "Energetische gezinstherapie, NEI-therapie en systemisch werk voor kinderen en volwassenen.",
+          url: SITE_URL,
+          image: abs(img.heroHome),
+          logo: abs(img.logo),
+          email: contactInfo.email,
+          telephone: "+31653370827",
+          founder: { "@type": "Person", name: "Lindy Prins" },
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Paradijsstraat 75",
+            postalCode: "2275 EL",
+            addressLocality: "Voorburg",
+            addressCountry: "NL",
+          },
+          areaServed: "Nederland",
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,

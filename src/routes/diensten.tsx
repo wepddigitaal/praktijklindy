@@ -2,24 +2,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { CtaLink, ClosingCta } from "@/components/site/CTA";
 import { img } from "@/lib/images";
+import { socialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/diensten")({
-  head: () => ({
-    meta: [
-      { title: "Diensten — NEI-therapie & systemisch werk | Praktijk Lindy" },
-      {
-        name: "description",
-        content:
-          "Waar ik bij kan helpen: NEI-therapie, systemisch werk en doorbraakcoaching voor volwassenen en kinderen. Fysiek, online of op afstand.",
-      },
-      { property: "og:title", content: "Diensten — Praktijk Lindy" },
-      {
-        property: "og:description",
-        content:
-          "NEI-therapie, systemisch werk en doorbraakcoaching voor volwassenen en kinderen.",
-      },
-    ],
-  }),
+  head: () =>
+    socialMeta({
+      path: "/diensten",
+      title: "Diensten — NEI-therapie & systemisch werk | Praktijk Lindy",
+      description:
+        "NEI-therapie, systemisch werk en doorbraakcoaching voor kinderen en volwassenen. Fysiek in Voorburg, online of op afstand.",
+      image: img.heroDiensten,
+    }),
   component: Diensten,
 });
 

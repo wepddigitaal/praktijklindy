@@ -4,24 +4,17 @@ import { PageHero } from "@/components/site/PageHero";
 import { CtaLink, ClosingCta } from "@/components/site/CTA";
 import { Testimonials } from "@/components/site/Testimonials";
 import { img } from "@/lib/images";
+import { socialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/aanbod")({
-  head: () => ({
-    meta: [
-      { title: "Aanbod — losse sessies en trajecten | Praktijk Lindy" },
-      {
-        name: "description",
-        content:
-          "Kies voor een losse sessie (Love Yourself) of een verdiepend traject: Be Yourself voor vrouwen en Be Wonderfully You voor kinderen.",
-      },
-      { property: "og:title", content: "Aanbod — Praktijk Lindy" },
-      {
-        property: "og:description",
-        content:
-          "Losse sessies en verdiepende trajecten voor volwassenen en kinderen bij Praktijk Lindy.",
-      },
-    ],
-  }),
+  head: () =>
+    socialMeta({
+      path: "/aanbod",
+      title: "Aanbod — losse sessies en trajecten | Praktijk Lindy",
+      description:
+        "Kies een losse sessie (Love Yourself) of een verdiepend traject: Be Yourself voor vrouwen en Be Wonderfully You voor kinderen.",
+      image: img.heroAanbod,
+    }),
   component: Aanbod,
 });
 

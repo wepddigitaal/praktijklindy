@@ -4,24 +4,17 @@ import { PageHero } from "@/components/site/PageHero";
 import { Testimonials } from "@/components/site/Testimonials";
 import { CtaLink, ClosingCta } from "@/components/site/CTA";
 import { img } from "@/lib/images";
+import { socialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Praktijk Lindy — Waar jij écht gezien en gehoord wordt" },
-      {
-        name: "description",
-        content:
-          "Lindy Prins, energetisch gezinstherapeut in Voorburg. NEI-therapie, systemisch werk en energetische begeleiding voor kinderen en volwassenen.",
-      },
-      { property: "og:title", content: "Praktijk Lindy — Waar jij écht gezien en gehoord wordt" },
-      {
-        property: "og:description",
-        content:
-          "Energetische gezinstherapie voor kinderen en volwassenen. Rust, veerkracht en verbinding met jezelf.",
-      },
-    ],
-  }),
+  head: () =>
+    socialMeta({
+      path: "/",
+      title: "Praktijk Lindy — energetisch gezinstherapeut in Voorburg",
+      description:
+        "Lindy Prins helpt kinderen, vrouwen en gezinnen met NEI-therapie, systemisch werk en energetische begeleiding in Voorburg. Waar jij écht gezien en gehoord wordt.",
+      image: img.heroHome,
+    }),
   component: Home,
 });
 
