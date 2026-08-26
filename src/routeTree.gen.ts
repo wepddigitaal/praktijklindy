@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AanbodRouteImport } from './routes/aanbod'
+import { Route as AlgemeneVoorwaardenRouteImport } from './routes/algemene-voorwaarden'
 import { Route as AlleenGeborenTweelingRouteImport } from './routes/alleen-geboren-tweeling'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DienstenRouteImport } from './routes/diensten'
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
 const AanbodRoute = AanbodRouteImport.update({
   id: '/aanbod',
   path: '/aanbod',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlgemeneVoorwaardenRoute = AlgemeneVoorwaardenRouteImport.update({
+  id: '/algemene-voorwaarden',
+  path: '/algemene-voorwaarden',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AlleenGeborenTweelingRoute = AlleenGeborenTweelingRouteImport.update({
@@ -44,6 +50,7 @@ const DienstenRoute = DienstenRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aanbod': typeof AanbodRoute
+  '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
   '/alleen-geboren-tweeling': typeof AlleenGeborenTweelingRoute
   '/contact': typeof ContactRoute
   '/diensten': typeof DienstenRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aanbod': typeof AanbodRoute
+  '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
   '/alleen-geboren-tweeling': typeof AlleenGeborenTweelingRoute
   '/contact': typeof ContactRoute
   '/diensten': typeof DienstenRoute
@@ -59,6 +67,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/aanbod': typeof AanbodRoute
+  '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
   '/alleen-geboren-tweeling': typeof AlleenGeborenTweelingRoute
   '/contact': typeof ContactRoute
   '/diensten': typeof DienstenRoute
@@ -66,13 +75,25 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/aanbod' | '/alleen-geboren-tweeling' | '/contact' | '/diensten'
+    | '/'
+    | '/aanbod'
+    | '/algemene-voorwaarden'
+    | '/alleen-geboren-tweeling'
+    | '/contact'
+    | '/diensten'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/aanbod' | '/alleen-geboren-tweeling' | '/contact' | '/diensten'
+  to:
+    | '/'
+    | '/aanbod'
+    | '/algemene-voorwaarden'
+    | '/alleen-geboren-tweeling'
+    | '/contact'
+    | '/diensten'
   id:
     | '__root__'
     | '/'
     | '/aanbod'
+    | '/algemene-voorwaarden'
     | '/alleen-geboren-tweeling'
     | '/contact'
     | '/diensten'
@@ -81,6 +102,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AanbodRoute: typeof AanbodRoute
+  AlgemeneVoorwaardenRoute: typeof AlgemeneVoorwaardenRoute
   AlleenGeborenTweelingRoute: typeof AlleenGeborenTweelingRoute
   ContactRoute: typeof ContactRoute
   DienstenRoute: typeof DienstenRoute
@@ -100,6 +122,13 @@ declare module '@tanstack/react-router' {
       path: '/aanbod'
       fullPath: '/aanbod'
       preLoaderRoute: typeof AanbodRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/algemene-voorwaarden': {
+      id: '/algemene-voorwaarden'
+      path: '/algemene-voorwaarden'
+      fullPath: '/algemene-voorwaarden'
+      preLoaderRoute: typeof AlgemeneVoorwaardenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/alleen-geboren-tweeling': {
@@ -129,6 +158,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AanbodRoute: AanbodRoute,
+  AlgemeneVoorwaardenRoute: AlgemeneVoorwaardenRoute,
   AlleenGeborenTweelingRoute: AlleenGeborenTweelingRoute,
   ContactRoute: ContactRoute,
   DienstenRoute: DienstenRoute,
