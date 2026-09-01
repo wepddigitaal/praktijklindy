@@ -193,9 +193,15 @@ function Aanbod() {
                 Lees meer over Wonderfully You
               </CtaLink>
             </div>
-          </div>
         </div>
       </section>
+
+      <Testimonials
+        items={kindTestimonials}
+        eyebrow="Ervaringen van ouders"
+        title="Wat ouders vertellen over sessies met hun kind"
+      />
+
 
       <section className="container-page py-20">
         <div className="surface-card grid items-center gap-10 p-8 md:grid-cols-[1fr_0.8fr] md:p-12">
