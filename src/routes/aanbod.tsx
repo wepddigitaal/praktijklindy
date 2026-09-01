@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, Sparkles, Users, Baby } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { CtaLink, ClosingCta } from "@/components/site/CTA";
-import { Testimonials } from "@/components/site/Testimonials";
+import { Testimonials, kindTestimonials } from "@/components/site/Testimonials";
 import { img } from "@/lib/images";
 import { socialMeta } from "@/lib/seo";
 
