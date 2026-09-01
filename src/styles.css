@@ -64,71 +64,64 @@
 :root {
   --radius: 1rem;
 
-  --background: oklch(0.985 0.012 95);
-  --foreground: oklch(0.29 0.032 145);
+  /* Huisstijl Praktijk Lindy — logokleuren #6f8073 (groen) & #bb9d9a (oudroze) */
+  --background: #fbfaf8;
+  --foreground: #37423a;
 
-  --card: oklch(0.995 0.006 95);
-  --card-foreground: oklch(0.29 0.032 145);
-  --popover: oklch(0.995 0.006 95);
-  --popover-foreground: oklch(0.29 0.032 145);
+  --card: #ffffff;
+  --card-foreground: #37423a;
+  --popover: #ffffff;
+  --popover-foreground: #37423a;
 
-  /* mosgroen */
-  --primary: oklch(0.44 0.055 148);
-  --primary-foreground: oklch(0.98 0.012 95);
+  /* logogroen */
+  --primary: #6f8073;
+  --primary-foreground: #fbfaf8;
 
-  /* zand */
-  --secondary: oklch(0.94 0.024 92);
-  --secondary-foreground: oklch(0.33 0.036 145);
+  --secondary: #e7ebe7;
+  --secondary-foreground: #3b463d;
 
-  --muted: oklch(0.955 0.017 95);
-  --muted-foreground: oklch(0.5 0.022 140);
+  --muted: #f2f1ed;
+  --muted-foreground: #69756d;
 
-  /* klei / terracotta accent */
-  --accent: oklch(0.7 0.09 55);
-  --accent-foreground: oklch(0.99 0.01 95);
+  /* oudroze accent uit het logo */
+  --accent: #bb9d9a;
+  --accent-foreground: #ffffff;
 
   --destructive: oklch(0.55 0.19 27);
-  --destructive-foreground: oklch(0.98 0.01 95);
+  --destructive-foreground: #fbfaf8;
 
-  --border: oklch(0.9 0.02 95);
-  --input: oklch(0.9 0.02 95);
-  --ring: oklch(0.44 0.055 148);
+  --border: #e2e4df;
+  --input: #e2e4df;
+  --ring: #6f8073;
 
-  --sand: oklch(0.93 0.028 88);
-  --cream: oklch(0.975 0.016 95);
-  --clay: oklch(0.72 0.075 52);
-  --clay-foreground: oklch(0.3 0.04 50);
-  --moss: oklch(0.38 0.05 148);
-  --moss-foreground: oklch(0.97 0.013 95);
+  --sand: #efe9e7;
+  --cream: #f7f5f2;
+  --clay: #bb9d9a;
+  --clay-foreground: #4a3b39;
+  --moss: #5b6b60;
+  --moss-foreground: #f7f5f2;
 
-  --chart-1: oklch(0.44 0.055 148);
-  --chart-2: oklch(0.72 0.075 52);
-  --chart-3: oklch(0.6 0.05 120);
-  --chart-4: oklch(0.8 0.04 90);
-  --chart-5: oklch(0.5 0.04 200);
+  --chart-1: #6f8073;
+  --chart-2: #bb9d9a;
+  --chart-3: #93a396;
+  --chart-4: #d8c7c4;
+  --chart-5: #5b6b60;
 
-  --sidebar: oklch(0.975 0.016 95);
-  --sidebar-foreground: oklch(0.29 0.032 145);
-  --sidebar-primary: oklch(0.44 0.055 148);
-  --sidebar-primary-foreground: oklch(0.98 0.012 95);
-  --sidebar-accent: oklch(0.93 0.028 88);
-  --sidebar-accent-foreground: oklch(0.33 0.036 145);
-  --sidebar-border: oklch(0.9 0.02 95);
-  --sidebar-ring: oklch(0.44 0.055 148);
+  --sidebar: #f7f5f2;
+  --sidebar-foreground: #37423a;
+  --sidebar-primary: #6f8073;
+  --sidebar-primary-foreground: #fbfaf8;
+  --sidebar-accent: #e7ebe7;
+  --sidebar-accent-foreground: #3b463d;
+  --sidebar-border: #e2e4df;
+  --sidebar-ring: #6f8073;
 
-  --gradient-moss: linear-gradient(
-    160deg,
-    oklch(0.44 0.055 148) 0%,
-    oklch(0.36 0.05 155) 100%
-  );
-  --gradient-warm: linear-gradient(
-    180deg,
-    oklch(0.985 0.012 95) 0%,
-    oklch(0.945 0.026 90) 100%
-  );
-  --shadow-soft: 0 18px 50px -24px oklch(0.44 0.055 148 / 0.35);
-  --shadow-card: 0 10px 30px -18px oklch(0.44 0.055 148 / 0.28);
+  --gradient-moss: linear-gradient(160deg, #6f8073 0%, #56655b 100%);
+  --gradient-warm: linear-gradient(180deg, #fbfaf8 0%, #eee9e6 100%);
+  --shadow-soft: 0 18px 50px -24px rgb(111 128 115 / 0.45);
+  --shadow-card: 0 10px 30px -18px rgb(111 128 115 / 0.35);
 }
+
 
 @layer base {
   * {
