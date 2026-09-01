@@ -5,4 +5,4 @@
 - [x] Ouder-testimonials bij kindtraject
 - [x] Contactfoto vervangen
 - [ ] Videolinks bij NEI-uitleg (wacht op URLs)
-- [ ] Prijs kindtraject bevestigen
+- [x] Prijs kindtraject: € 599,-
