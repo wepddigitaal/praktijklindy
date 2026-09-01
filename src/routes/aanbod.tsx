@@ -193,8 +193,10 @@ function Aanbod() {
                 Lees meer over Wonderfully You
               </CtaLink>
             </div>
+          </div>
         </div>
       </section>
+
 
       <Testimonials
         items={kindTestimonials}
