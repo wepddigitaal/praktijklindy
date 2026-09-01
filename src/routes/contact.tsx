@@ -32,7 +32,7 @@ function Contact() {
         title="Laten we kennismaken"
         intro="Heb je een vraag of wil je een afspraak maken? Stuur me een bericht of app me — ik denk graag met je mee, ook als je nog niet precies weet wat je nodig hebt."
         image={img.lindyPortret}
-        imageAlt="Praktijk Lindy in Voorburg"
+        imageAlt="Lindy Prins, energetisch gezinstherapeut in Voorburg"
         actions={
           <>
             <CtaLink to="/contact" hash="plan-je-afspraak">
