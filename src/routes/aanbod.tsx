@@ -60,7 +60,7 @@ const pakketten = [
     icon: Baby,
     name: "Be Wonderfully You",
     tagline: "Gedrag is geen probleem, maar een signaal.",
-    price: "Op aanvraag",
+    price: "€ 599,-",
     features: [
       "Samen ontdekken we wat jouw kind nodig heeft om weer in zijn of haar kracht te staan",
       "Voor kinderen die snel overprikkeld zijn, veel voelen, onzeker zijn of vastlopen",
