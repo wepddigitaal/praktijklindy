@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, Sparkles, Users, Baby } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { CtaLink, ClosingCta } from "@/components/site/CTA";
-import { Testimonials } from "@/components/site/Testimonials";
+import { Testimonials, kindTestimonials } from "@/components/site/Testimonials";
 import { img } from "@/lib/images";
 import { socialMeta } from "@/lib/seo";
 
@@ -196,6 +196,14 @@ function Aanbod() {
           </div>
         </div>
       </section>
+
+
+      <Testimonials
+        items={kindTestimonials}
+        eyebrow="Ervaringen van ouders"
+        title="Wat ouders vertellen over sessies met hun kind"
+      />
+
 
       <section className="container-page py-20">
         <div className="surface-card grid items-center gap-10 p-8 md:grid-cols-[1fr_0.8fr] md:p-12">

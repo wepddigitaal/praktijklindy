@@ -90,20 +90,21 @@ function Home() {
               </CtaLink>
             </div>
           </div>
-          <div className="grid gap-5">
+          <div className="mx-auto grid w-full max-w-xs gap-5 sm:max-w-sm">
             <img
               src={img.lindyWerk}
               alt="Lindy aan het werk in haar praktijk"
               loading="lazy"
-              className="w-full rounded-3xl object-cover shadow-[var(--shadow-card)]"
+              className="aspect-[4/3] w-full rounded-3xl object-cover shadow-[var(--shadow-card)]"
             />
             <img
               src={img.lindyNatuur}
               alt="Lindy in de natuur"
               loading="lazy"
-              className="w-full rounded-3xl object-cover shadow-[var(--shadow-card)]"
+              className="aspect-[4/3] w-full rounded-3xl object-cover shadow-[var(--shadow-card)]"
             />
           </div>
+
         </div>
       </section>
 

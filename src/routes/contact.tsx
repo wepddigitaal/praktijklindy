@@ -13,7 +13,7 @@ export const Route = createFileRoute("/contact")({
       title: "Contact — Praktijk Lindy in Voorburg",
       description:
         "Neem contact op met Praktijk Lindy in Voorburg. Mail info@praktijklindy.nl, bel of app 06 53370827, of plan direct je afspraak.",
-      image: img.extra3,
+      image: img.lindyBiotensor,
     }),
   component: Contact,
 });
@@ -31,8 +31,10 @@ function Contact() {
         eyebrow="Contact"
         title="Laten we kennismaken"
         intro="Heb je een vraag of wil je een afspraak maken? Stuur me een bericht of app me — ik denk graag met je mee, ook als je nog niet precies weet wat je nodig hebt."
-        image={img.extra3}
-        imageAlt="Praktijk Lindy in Voorburg"
+        image={img.lindyBiotensor}
+        imageAlt="Lindy Prins met de biotensor in haar praktijk in Voorburg"
+        imagePosition="68% center"
+
         actions={
           <>
             <CtaLink to="/contact" hash="plan-je-afspraak">

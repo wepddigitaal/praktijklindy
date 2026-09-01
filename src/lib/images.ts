@@ -15,6 +15,7 @@ import praktijkDetail from "@/assets/praktijk-detail.jpg.asset.json";
 import extra1 from "@/assets/extra-1.jpg.asset.json";
 import extra2 from "@/assets/extra-2.jpg.asset.json";
 import extra3 from "@/assets/extra-3.jpg.asset.json";
+import lindyBiotensor from "@/assets/lindy-biotensor-laptop.jpg.asset.json";
 import heroHome from "@/assets/homepage.jpg.asset.json";
 import heroDiensten from "@/assets/dienstenpage2.jpg.asset.json";
 import heroAanbod from "@/assets/aanbodpage.jpg.asset.json";
@@ -39,6 +40,7 @@ export const img = {
   extra1: extra1.url,
   extra2: extra2.url,
   extra3: extra3.url,
+  lindyBiotensor: lindyBiotensor.url,
   heroHome: heroHome.url,
   heroDiensten: heroDiensten.url,
   heroAanbod: heroAanbod.url,

@@ -1,6 +1,8 @@
 import { Quote } from "lucide-react";
 
-const testimonials = [
+type Testimonial = { name: string; text: string };
+
+const testimonials: Testimonial[] = [
   {
     name: "Kimberly",
     text: "Voordat ik bij Lindy kwam, worstelde ik enorm met de impact van de vroeggeboorte van ons kindje. Haar coaching hielp me om alles een plek te geven. Lindy is warm, laagdrempelig en spreekt met de kracht van een vriendin.",
@@ -27,15 +29,38 @@ const testimonials = [
   },
 ];
 
-export function Testimonials() {
+export const kindTestimonials: Testimonial[] = [
+  {
+    name: "Ouders van een cliënt",
+    text: "Vannacht ook weer geen nachtmerries en nog steeds een blij meisje. Zo fijn! Heel bijzonder, zo in één sessie.",
+  },
+  {
+    name: "Moeder van een zoon (7)",
+    text: "Onze zoon was snel overprikkeld en boos. Lindy keek voorbij het gedrag en legde uit wat er onder zat. Thuis is het merkbaar rustiger geworden.",
+  },
+  {
+    name: "Ouders uit Voorburg",
+    text: "Fijn dat wij als ouders volledig werden meegenomen. We begrijpen ons kind nu beter en weten wat het nodig heeft.",
+  },
+];
+
+export function Testimonials({
+  items = testimonials,
+  eyebrow = "Ervaringen",
+  title = "Wat anderen vertellen",
+}: {
+  items?: Testimonial[];
+  eyebrow?: string;
+  title?: string;
+}) {
   return (
     <section className="container-page py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="eyebrow">Ervaringen</p>
-        <h2 className="mt-3 text-3xl sm:text-4xl">Wat anderen vertellen</h2>
+        <p className="eyebrow">{eyebrow}</p>
+        <h2 className="mt-3 text-3xl sm:text-4xl">{title}</h2>
       </div>
       <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {testimonials.map((t) => (
+        {items.map((t) => (
           <figure key={t.name} className="surface-card flex flex-col gap-4 p-6">
             <Quote className="h-6 w-6 text-clay" />
             <blockquote className="text-sm leading-relaxed text-muted-foreground">
